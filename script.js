@@ -31,6 +31,7 @@ var addedText = [addedText9, addedText10, addedText11, addedText12, addedText13,
 
 
 
+
 $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
@@ -38,14 +39,23 @@ $(function () {
     // function? How can DOM traversal be used to get the "hour-x" id of the
     // time-block containing the button that was clicked? How might the id be
     // useful when saving the description in local storage?
-    /*for (var x=0;x<currentHours.length; x++){
-        
-    }*/
+
+    
+        var todo9 = localStorage.getItem('9AM')
+        var todo10 = localStorage.getItem('10AM')
+        var todo11 = localStorage.getItem('11AM')
+        var todo12 = localStorage.getItem('12PM')
+        var todo1 = localStorage.getItem('1PM')
+        var todo2 = localStorage.getItem('2PM')
+        var todo3 = localStorage.getItem('3PM')
+        var todo4 = localStorage.getItem('4PM')
+        var todo5 = localStorage.getItem('5PM')
+
     currentHours[0].children('button').on('click', function(event){
         event.preventDefault()
-            console.log('working')
-            var todo9Am = $('textarea[name="9AM"]').val()
-            localStorage.setItem('9AM', todo9Am)
+        console.log('working')
+        var todo = $('textarea[name="9AM"').val()
+        localStorage.setItem('9AM', todo)
     })
     currentHours[1].children('button').on('click', function(event){
         event.preventDefault()
@@ -123,15 +133,17 @@ $(function () {
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
-    
-
-
-
-
-
+    hour9.children('textarea').val(todo9)
+    hour10.children('textarea').val(todo10)
+    hour11.children('textarea').val(todo11)
+    hour12.children('textarea').val(todo12)
+    hour13.children('textarea').val(todo1)
+    hour14.children('textarea').val(todo2)
+    hour15.children('textarea').val(todo3)
+    hour16.children('textarea').val(todo4)
+    hour17.children('textarea').val(todo5)
 
     //
     // TODO: Add code to display the current date in the header of the page.
     currentDay.text(date)
-  });
-  
+});
