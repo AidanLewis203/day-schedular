@@ -39,7 +39,6 @@ $(function () {
     // function? How can DOM traversal be used to get the "hour-x" id of the
     // time-block containing the button that was clicked? How might the id be
     // useful when saving the description in local storage?
-
     
         var todo9 = localStorage.getItem('9AM')
         var todo10 = localStorage.getItem('10AM')
