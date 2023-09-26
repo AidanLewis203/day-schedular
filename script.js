@@ -3,7 +3,7 @@
 // in the html.
 var currentDay= $('#currentDay')
 var date = dayjs().format('dddd, MMMM D')
-var time = dayjs().subtract(15, 'hour').format('HH')
+var time = dayjs().format('HH')
 var currentHourIndex = 0
 var hours = ['09', '10', '11', '12', '13', '14', '15', '16', '17']
 var hour9 = $('#hour-9')
@@ -16,10 +16,21 @@ var hour15 = $('#hour-15')
 var hour16 = $('#hour-16')
 var hour17 = $('#hour-17')
 var currentHours = [hour9, hour10, hour11, hour12, hour13, hour14, hour15, hour16, hour17]
-var saveButton = $('.savebtn')
+
+var addedText9 = $("#9AM")
+var addedText10 = $("#10AM")
+var addedText11 = $("#11AM")
+var addedText12 = $("#12PM")
+var addedText13 = $("#1PM")
+var addedText14 = $("#2PM")
+var addedText15 = $("#3PM")
+var addedText16 = $("#4PM")
+var addedText17 = $("#5PM")
+var addedText = [addedText9, addedText10, addedText11, addedText12, addedText13, addedText14, addedText15, addedText16, addedText17]
 
 
-currentDay.text(date)
+
+
 $(function () {
     // TODO: Add a listener for click events on the save button. This code should
     // use the id in the containing time-block as a key to save the user input in
@@ -27,15 +38,63 @@ $(function () {
     // function? How can DOM traversal be used to get the "hour-x" id of the
     // time-block containing the button that was clicked? How might the id be
     // useful when saving the description in local storage?
-    saveButton.on('click', function(){
-        console.log('working')
+    /*for (var x=0;x<currentHours.length; x++){
+        
+    }*/
+    currentHours[0].children('button').on('click', function(event){
+        event.preventDefault()
+            console.log('working')
+            var todo9Am = $('textarea[name="9AM"]').val()
+            localStorage.setItem('9AM', todo9Am)
     })
-
-    
-
-
-
-
+    currentHours[1].children('button').on('click', function(event){
+        event.preventDefault()
+        console.log('working')
+        var todo10AM = $('textarea[name="10AM"]').val()
+        localStorage.setItem('10AM', todo10AM)
+    })
+    currentHours[2].children('button').on('click', function(event){
+        event.preventDefault()
+        console.log('working')
+        var todo11AM = $('textarea[name="11AM"]').val()
+        localStorage.setItem('11AM', todo11AM)
+    })
+    currentHours[3].children('button').on('click', function(event){
+        event.preventDefault()
+        console.log('working')
+        var todo12PM = $('textarea[name="12PM"]').val()
+        localStorage.setItem('12PM', todo12PM)
+    })
+    currentHours[4].children('button').on('click', function(event){
+        event.preventDefault()
+        console.log('working')
+        var todo1PM = $('textarea[name="1PM"]').val()
+        localStorage.setItem('1PM', todo1PM)
+    })
+    currentHours[5].children('button').on('click', function(event){
+        event.preventDefault()
+        console.log('working')
+        var todo2PM = $('textarea[name="2PM"]').val()
+        localStorage.setItem('2PM', todo2PM)
+    })
+    currentHours[6].children('button').on('click', function(event){
+        event.preventDefault()
+        console.log('working')
+        var todo3PM = $('textarea[name="3PM"]').val()
+        localStorage.setItem('3PM', todo3PM)
+    })
+    currentHours[7].children('button').on('click', function(event){
+        event.preventDefault()
+        console.log('working')
+        var todo4PM = $('textarea[name="4PM"').val()
+        localStorage.setItem('4PM', todo4PM)
+    })
+    currentHours[8].children('button').on('click', function(event){
+        event.preventDefault()
+        console.log('working')
+        var todo5PM = $('textarea[name="5PM"]').val()
+        localStorage.setItem('5PM', todo5PM)
+    })
 
     // TODO: Add code to apply the past, present, or future class to each time
     // block by comparing the id to the current hour. HINTS: How can the id
@@ -64,7 +123,15 @@ $(function () {
     // TODO: Add code to get any user input that was saved in localStorage and set
     // the values of the corresponding textarea elements. HINT: How can the id
     // attribute of each time-block be used to do this?
+    
+
+
+
+
+
+
     //
     // TODO: Add code to display the current date in the header of the page.
+    currentDay.text(date)
   });
   
